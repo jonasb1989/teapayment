@@ -1,7 +1,19 @@
+import { Card } from '~/components';
+
+import * as Styles from './styles';
+
+const days = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY'];
+
 export function CityWeatherDetails() {
   return (
-    <section>
-      <p>Cities Weather Details</p>
-    </section>
+    <Styles.Main>
+      <Styles.DaysList>
+        {days.map((day) => (
+          <Styles.DayItem key={day}>
+            <Card>{day}</Card>
+          </Styles.DayItem>
+        ))}
+      </Styles.DaysList>
+    </Styles.Main>
   );
 }

@@ -1,9 +1,8 @@
 export const theme = {
   colors: {
     white: '#fff',
-    blue: '#32334D',
-    boxShadow:
-      'rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px',
+    blue: '#a0d7ff',
+    boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;',
   },
 
   typography: {
@@ -16,6 +15,6 @@ export const theme = {
     familyMedium: 'RobotoMedium',
     familyRegular: 'RobotoRegular',
     familyBold: 'RobotoBold',
-    letterSpacing: '0.3rem',
+    letterSpacing: '0.125rem',
   },
 };

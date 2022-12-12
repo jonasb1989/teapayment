@@ -19,7 +19,7 @@ const cities = [
     lon: -51.23,
   },
   {
-    name: 'Lisboa',
+    name: 'Lisbon',
     lat: -30.033056,
     lon: -51.23,
   },
@@ -28,9 +28,13 @@ const cities = [
 export function CitiesList() {
   return (
     <Styles.Header>
-      {cities.map((citie) => (
-        <Button key={citie.name}>{citie.name}</Button>
-      ))}
+      <Styles.CitiesList>
+        {cities.map((citie) => (
+          <li key={citie.name}>
+            <Button>{citie.name}</Button>
+          </li>
+        ))}
+      </Styles.CitiesList>
     </Styles.Header>
   );
 }
