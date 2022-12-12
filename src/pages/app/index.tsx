@@ -1,3 +1,12 @@
+import { CitiesList, CityWeatherDetails } from './components';
+
+import * as Styles from './styles';
+
 export function App() {
-  return <h1>App Teste Teapayment</h1>;
+  return (
+    <Styles.Main>
+      <CitiesList />
+      <CityWeatherDetails />
+    </Styles.Main>
+  );
 }
