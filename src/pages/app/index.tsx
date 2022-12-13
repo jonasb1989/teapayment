@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { getWeatherData, DayWeatherProps } from '~/services';
 import { CitiesList, CityWeatherDetails } from './components';
 
+const daysRange = 5;
+
 const cities = [
   {
     name: 'Porto Alegre',
@@ -26,6 +28,7 @@ const cities = [
 ];
 
 export function App() {
+  const [isLoading, setIsLoading] = useState(false);
   const [selectedCity, setSelectedCity] = useState(cities[0]);
   const [weatherDataList, setWeatherDataList] = useState([]);
 
@@ -34,13 +37,15 @@ export function App() {
   }
 
   async function handleGetWeatherData() {
+    setIsLoading(true);
     const { lat, lon } = selectedCity;
     const { data } = await getWeatherData(lat, lon);
     const daysInRange = data.daily.filter(
-      (day: DayWeatherProps, index: number) => index < 5,
+      (day: DayWeatherProps, index: number) => index < daysRange,
     );
 
     setWeatherDataList(daysInRange);
+    setIsLoading(false);
   }
 
   useEffect(() => {
@@ -54,7 +59,10 @@ export function App() {
         onIsActive={handleIsActive}
         onSelectCity={setSelectedCity}
       />
-      <CityWeatherDetails weatherDataList={weatherDataList} />
+      <CityWeatherDetails
+        isLoading={isLoading}
+        weatherDataList={weatherDataList}
+      />
     </>
   );
 }

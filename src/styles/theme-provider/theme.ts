@@ -15,6 +15,6 @@ export const theme = {
     familyMedium: 'RobotoMedium',
     familyRegular: 'RobotoRegular',
     familyBold: 'RobotoBold',
-    letterSpacing: '0.125rem',
+    letterSpacing: '0.075rem',
   },
 };

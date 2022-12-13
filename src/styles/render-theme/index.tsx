@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { MyThemeProvider } from './theme-provider';
+import { MyThemeProvider } from '../theme-provider';
 
 interface RenderThemeProps {
   children: ReactNode;

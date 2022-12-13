@@ -12,12 +12,12 @@ export const Card = styled('div')`
   border: 1px solid ${({ theme }) => theme.colors.white};
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   color: ${({ theme }) => theme.colors.white};
+`;
 
-  h4 {
-    text-transform: uppercase;
-    font-size: ${({ theme }) => theme.typography.sizeMedium};
-    font-family: ${({ theme }) => theme.typography.familyBold};
-  }
+export const Day = styled('h4')`
+  text-transform: uppercase;
+  font-size: ${({ theme }) => theme.typography.sizeMedium};
+  font-family: ${({ theme }) => theme.typography.familyBold};
 `;
 
 export const Weather = styled('span')`
@@ -29,14 +29,16 @@ export const Icon = styled('img')`
   margin: 1rem 0;
 `;
 
-export const ExtraInfo = styled('div')`
-  width: 100%;
+export const Footer = styled('div')`
   display: flex;
+  width: 100%;
   justify-content: space-between;
-  padding: 1rem 0.875rem;
+`;
 
+export const Info = styled('div')`
   span {
-    font-family: ${({ theme }) => theme.typography.familyBold};
-    font-size: ${({ theme }) => theme.typography.sizeSmall};
+    display: block;
+    text-align: center;
+    padding: 0.875rem 0;
   }
 `;

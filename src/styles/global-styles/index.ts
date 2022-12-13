@@ -1,9 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
-import RobotoBold from '../assets/fonts/Roboto-Bold.ttf';
-import RobotoLight from '../assets/fonts/Roboto-Light.ttf';
-import RobotoMedium from '../assets/fonts/Roboto-Medium.ttf';
-import RobotoRegular from '../assets/fonts/Roboto-Regular.ttf';
-import RobotoThin from '../assets/fonts/Roboto-Thin.ttf';
+import RobotoBold from '~/assets/fonts/Roboto-Bold.ttf';
+import RobotoLight from '~/assets/fonts/Roboto-Light.ttf';
+import RobotoMedium from '~/assets/fonts/Roboto-Medium.ttf';
+import RobotoRegular from '~/assets/fonts/Roboto-Regular.ttf';
+import RobotoThin from '~/assets/fonts/Roboto-Thin.ttf';
 
 export const GlobalStyles = createGlobalStyle`
   @font-face {
