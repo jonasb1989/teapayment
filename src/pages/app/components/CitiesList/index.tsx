@@ -2,37 +2,35 @@ import { Button } from '~/components';
 
 import * as Styles from './styles';
 
-const cities = [
-  {
-    name: 'Porto Alegre',
-    lat: -30.033056,
-    lon: -51.23,
-  },
-  {
-    name: 'Dublin',
-    lat: -30.033056,
-    lon: -51.23,
-  },
-  {
-    name: 'Reykjavik',
-    lat: -30.033056,
-    lon: -51.23,
-  },
-  {
-    name: 'Lisbon',
-    lat: -30.033056,
-    lon: -51.23,
-  },
-];
+interface CityProps {
+  name: string;
+  lat: number;
+  lon: number;
+}
 
-export function CitiesList() {
+interface CitiesListProps {
+  cities: CityProps[];
+  onIsActive: (cityName: string) => boolean | undefined;
+  onSelectCity: (city: CityProps) => void;
+}
+
+export function CitiesList({
+  cities,
+  onIsActive,
+  onSelectCity,
+}: CitiesListProps) {
   return (
     <Styles.Header>
       <Styles.CitiesList>
-        {cities.map((citie) => (
-          <li key={citie.name}>
-            <Button>{citie.name}</Button>
-          </li>
+        {cities.map((city) => (
+          <Styles.ListItem key={city.name}>
+            <Button
+              isActive={onIsActive(city.name)}
+              onClick={() => onSelectCity(city)}
+            >
+              {city.name}
+            </Button>
+          </Styles.ListItem>
         ))}
       </Styles.CitiesList>
     </Styles.Header>

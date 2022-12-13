@@ -2,9 +2,14 @@ import { ButtonHTMLAttributes } from 'react';
 
 import * as Styles from './styles';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  isActive?: boolean;
+}
 
-export function Button({ children, ...props }: ButtonProps) {
-  return <Styles.Button {...props}>{children}</Styles.Button>;
+export function Button({ children, isActive, ...props }: ButtonProps) {
+  return (
+    <Styles.Button isActive={isActive} {...props}>
+      {children}
+    </Styles.Button>
+  );
 }

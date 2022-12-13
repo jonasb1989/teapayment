@@ -1,7 +1,7 @@
 export const theme = {
   colors: {
     white: '#fff',
-    blue: '#a0d7ff',
+    blue: '#5f7397',
     boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;',
   },
 

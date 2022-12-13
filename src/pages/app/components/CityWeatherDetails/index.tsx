@@ -1,17 +1,22 @@
+import { DayWeatherProps } from '~/services';
 import { Card } from '~/components';
 
 import * as Styles from './styles';
 
-const days = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY'];
+interface CityWeatherDetailsProps {
+  weatherDataList: DayWeatherProps[];
+}
 
-export function CityWeatherDetails() {
+export function CityWeatherDetails({
+  weatherDataList,
+}: CityWeatherDetailsProps) {
   return (
     <Styles.Main>
       <Styles.DaysList>
-        {days.map((day) => (
-          <Styles.DayItem key={day}>
-            <Card>{day}</Card>
-          </Styles.DayItem>
+        {weatherDataList.map((data) => (
+          <Styles.ListItem>
+            <Card weatherData={data} />
+          </Styles.ListItem>
         ))}
       </Styles.DaysList>
     </Styles.Main>

@@ -7,13 +7,18 @@ export const Main = styled('main')`
 export const DaysList = styled('ul')`
   width: 100%;
   position: absolute;
-  top: -2rem;
+  top: -8rem;
   display: flex;
   justify-content: space-around;
   list-style: none;
+  padding: 1rem 0;
 `;
 
-export const DayItem = styled('li')`
+export const ListItem = styled('li')`
   padding: 0.375rem;
-  width: calc(100% / 5);
+  width: 20%;
+
+  span {
+    text-align: center;
+  }
 `;
