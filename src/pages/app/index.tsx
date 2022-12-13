@@ -50,7 +50,7 @@ export function App() {
 
   useEffect(() => {
     handleGetWeatherData();
-  }, [selectedCity]); // eslint-disable-line
+  }, [selectedCity]);
 
   return (
     <>
