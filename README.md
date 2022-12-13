@@ -1,4 +1,4 @@
-# React + Typescript + Vite
+# Tea payment application
 
 This is a React application for consulting the weather forecast
 for the next five days based on the city geolocation.
