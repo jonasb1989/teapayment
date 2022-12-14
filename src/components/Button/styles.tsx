@@ -6,7 +6,7 @@ interface ButtonProps {
 
 const buttonActiveStyles = css`
   color: ${({ theme }) => theme.colors.white};
-  background-color: ${({ theme }) => theme.colors.blue};
+  background-color: ${({ theme }) => theme.colors.orange};
   border-color: ${({ theme }) => theme.colors.white};
 `;
 

@@ -27,9 +27,15 @@ const cities = [
   },
 ];
 
+export interface CityProps {
+  name: string;
+  lat: number;
+  lon: number;
+}
+
 export function App() {
   const [isLoading, setIsLoading] = useState(false);
-  const [selectedCity, setSelectedCity] = useState(cities[0]);
+  const [selectedCity, setSelectedCity] = useState<CityProps>({} as CityProps);
   const [weatherDataList, setWeatherDataList] = useState([]);
 
   function handleIsActive(cityName: string) {
@@ -38,19 +44,31 @@ export function App() {
 
   async function handleGetWeatherData() {
     setIsLoading(true);
-    const { lat, lon } = selectedCity;
-    const { data } = await getWeatherData(lat, lon);
-    const daysInRange = data.daily.filter(
-      (day: DayWeatherProps, index: number) => index < daysRange,
-    );
 
-    setWeatherDataList(daysInRange);
-    setIsLoading(false);
+    try {
+      const { lat, lon } = selectedCity;
+      const { data } = await getWeatherData(lat, lon);
+      const daysInRange = data.daily.filter(
+        (day: DayWeatherProps, index: number) => index < daysRange,
+      );
+
+      setWeatherDataList(daysInRange);
+    } catch (error) {
+      console.log('Error', error);
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   useEffect(() => {
-    handleGetWeatherData();
+    if (selectedCity.name) {
+      handleGetWeatherData();
+    }
   }, [selectedCity]);
+
+  useEffect(() => {
+    setSelectedCity(cities[0]);
+  }, []);
 
   return (
     <>

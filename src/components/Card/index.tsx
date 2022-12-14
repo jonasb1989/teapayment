@@ -1,9 +1,14 @@
 import { DayWeatherProps } from '~/services';
-import { getWeekDay, getRoundedNumber } from '~/helpers';
+import {
+  getWeekDay,
+  getRoundedNumber,
+  getWinterDirections,
+  getKmHourFromMSec,
+} from '~/helpers';
 
 import * as Styles from './styles';
 
-interface CardProps {
+export interface CardProps {
   weatherData: DayWeatherProps;
 }
 
@@ -26,7 +31,7 @@ export function Card({ weatherData }: CardProps) {
           <span>
             win speed
             <br />
-            {getRoundedNumber(weatherData.wind_speed)}
+            {getKmHourFromMSec(weatherData.wind_speed)} km/h
           </span>
         </Styles.Info>
         <Styles.Info>
@@ -38,7 +43,7 @@ export function Card({ weatherData }: CardProps) {
           <span>
             win dir
             <br />
-            25
+            {getWinterDirections(weatherData.wind_deg)}
           </span>
         </Styles.Info>
       </Styles.Footer>

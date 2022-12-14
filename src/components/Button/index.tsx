@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes } from 'react';
 
 import * as Styles from './styles';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isActive?: boolean;
 }
 

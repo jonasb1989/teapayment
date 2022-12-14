@@ -2,7 +2,9 @@ export const theme = {
   colors: {
     white: '#fff',
     blue: '#5f7397',
-    boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;',
+    orange: '#ec6e4c',
+    boxShadow:
+      'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px',
   },
 
   typography: {

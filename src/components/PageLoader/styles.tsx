@@ -21,7 +21,7 @@ export const Spinner = styled('div')`
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-name: ${spinner};
-  border: 10px solid ${({ theme }) => theme.colors.blue};
+  border: 10px solid ${({ theme }) => theme.colors.orange};
   border-top: 10px solid ${({ theme }) => theme.colors.white};
 `;
 

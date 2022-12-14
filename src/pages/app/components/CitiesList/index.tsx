@@ -1,12 +1,8 @@
 import { Button } from '~/components';
 
-import * as Styles from './styles';
+import { CityProps } from '../../index';
 
-interface CityProps {
-  name: string;
-  lat: number;
-  lon: number;
-}
+import * as Styles from './styles';
 
 interface CitiesListProps {
   cities: CityProps[];

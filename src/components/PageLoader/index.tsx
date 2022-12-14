@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 
 import * as Styles from './styles';
 
-interface PageLoaderProps {
+export interface PageLoaderProps {
   children: ReactNode;
   isLoading: boolean;
 }
