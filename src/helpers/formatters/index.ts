@@ -6,12 +6,12 @@ export function getWeekDay(date: number) {
   });
 }
 
-export function getRoundedNumber(value: number) {
-  return value.toFixed(0);
+export function getRoundedNumber(number: number) {
+  return number.toFixed(0);
 }
 
-export function getWinterDirections(value: number) {
-  const directionIndex = Math.round(value / 45) % 8;
+export function getWinterDirections(angle: number) {
+  const directionIndex = Math.round(angle / 45) % 8;
   return directions[directionIndex];
 }
 
